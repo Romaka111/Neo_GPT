@@ -21,7 +21,7 @@ async def on_startup(_):
 
 async def main():
   try:
-        logger.info("🔄 Инициализация бота...")
+    logger.info("🔄 Иницализация бота...")
         await dp.start_polling()
     except Exception as e:
         logger.error(f"❌ Ошибка при запуске бота: {e}")
