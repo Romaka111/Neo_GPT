@@ -19,7 +19,7 @@ app.include_router(yoomoney.router)
 
 @app.on_event("startup")
 async def on_startup():
-    await bot.set_webhook(f"{BASE_URL}/webhook")
+  await bot.set_webhook(f"{BASE_URL}/webhook")
 
 # Подключаем Telegram webhook в FastAPI
 setup_application(app, dp, bot=bot)
