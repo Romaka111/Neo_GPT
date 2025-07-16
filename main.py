@@ -4,13 +4,15 @@ from fastapi import FastAPI
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
-from handlers import setup_handlers
+from commands import register_command_handlers
+from message import register_message_handlers
 from app.webhook import yoomoney
 from config import TELEGRAM_TOKEN, BASE_URL
 
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
-setup_handlers(dp)
+register_command_handlers(dp)
+register_message_handlers(dp)
 
 app = FastAPI()
 
