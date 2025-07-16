@@ -11,7 +11,7 @@ db = client["neogpt"]
 users_collection = db["users"]
 
 def get_user(telegram_id: int) -> User:
-    data = users_collection.find_one({"telegram_id": telegram_id})
+    data = users_collection.find_one({"telegram_id": telegram_id})
     if data:
         user = User(**data)
         # Сброс лимитов, если день прошёл
