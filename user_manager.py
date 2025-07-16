@@ -20,9 +20,9 @@ if user.last_reset.date() != datetime.utcnow().date():
   save_user(user)
 return user
 
-  new_user = User(telegram_id=telegram_id)
-  save_user(new_user)
-  return new_user
+new_user = User(telegram_id=telegram_id)
+save_user(new_user)
+return new_user
   
   def save_user(user: User):
     users_collection.update_one(
