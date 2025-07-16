@@ -27,5 +27,5 @@ async def main():
   logger.error(f"❌ Ошибка при запуске бота: {e}")
 
 if __name__ == '__main__':
-    logger.info("🚀 Старт скрипта bot.py")
-    asyncio.run(main())
+  logger.info("🚀 Старт скрипта bot.py")
+  asyncio.run(main())
