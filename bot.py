@@ -17,7 +17,7 @@ async def start_handler(message: types.Message):
   await meesage.answer("Привет! Я бот GPT ✨")
 
 async def on_startup(_):
-    logger.info("✅ Бот успешно запущен и готов к работе.")
+  logger.info("✅ Бот успешно запущен и готов к работе.")
 
 async def main():
     try:
