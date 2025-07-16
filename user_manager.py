@@ -19,7 +19,7 @@ if user.last_reset.date() != datetime.utcnow().date():
   user.reset_daily_limits()
   save_user(user)
 return user
-else:
+
   new_user = User(telegram_id=telegram_id)
   save_user(new_user)
   return new_user
