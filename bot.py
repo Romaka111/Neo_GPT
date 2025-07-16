@@ -20,7 +20,7 @@ async def on_startup(_):
   logger.info("✅ Бот успешно запущен и готов к работе.")
 
 async def main():
-    try:
+  try:
         logger.info("🔄 Инициализация бота...")
         await dp.start_polling()
     except Exception as e:
