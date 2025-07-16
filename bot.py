@@ -23,8 +23,8 @@ async def main():
   try:
     logger.info("🔄 Иницализация бота...")
     await dp.start_polling()
-    except Exception as e:
-        logger.error(f"❌ Ошибка при запуске бота: {e}")
+  except Exception as e
+  logger.error(f"❌ Ошибка при запуске бота: {e}")
 
 if __name__ == '__main__':
     logger.info("🚀 Старт скрипта bot.py")
