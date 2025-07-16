@@ -25,16 +25,16 @@ def get_user(telegram_id: int) -> User:
     return new_user
     
 def save_user(user: User):
-    users_collection.update_one(
-        {"telegram_id": user.telegram_id},
-        {"$set": user.dict()},
-        upsert=True
-    )
-
+    users_collection.update_one(
+        {"telegram_id": user.telegram_id},
+        {"$set": user.dict()},
+        upsert=True
+    )
+    
 def is_subscription_active(user: User) -> bool:
     if not user.subscription_end:
-        return False
-    return datetime.utcnow() < user.subscription_end
+        return False
+    return datetime.utcnow() < user.subscription_end
 
 def get_subscription_config(user: User) -> dict:
     return SUBSCRIPTION_CONFIG.get(user.subscription, SUBSCRIPTION_CONFIG[SubscriptionType.BASE])
