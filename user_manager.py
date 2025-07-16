@@ -32,7 +32,7 @@ def save_user(user: User):
     )
     
 def is_subscription_active(user: User) -> bool:
-    if not user.subscription_end:
+    if not user.subscripiton_end:
         return False
     return datetime.utcnow() < user.subscription_end
 
