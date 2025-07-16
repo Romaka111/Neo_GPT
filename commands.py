@@ -8,7 +8,7 @@ router = Router()
 @router.message(CommandStart())
 async def start_handler(message: types.Message):
   user = await get_or_create_user(message.from_user)
-    text = (
+  text = (
         f"👋 Привет, {message.from_user.first_name}!\n\n"
         "Я — NeoGPT, твой персональный AI-помощник в Telegram.\n"
         "Готов помочь тебе с учебой, бизнесом, аналитикой и многим другим.\n\n"
