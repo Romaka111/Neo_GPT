@@ -14,7 +14,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start_handler(message: types.Message):
-    await message.answer("Привет! Я бот GPT ✨")
+    await meesage.answer("Привет! Я бот GPT ✨")
 
 async def on_startup(_):
     logger.info("✅ Бот успешно запущен и готов к работе.")
