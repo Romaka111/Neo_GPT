@@ -1,5 +1,5 @@
 from aiogram import Router, types, F
-from user_manager import get_or_create_user, increment_message_count
+from user_manager import get_or_create_user, increment_usage
 from openai_client import chat_with_gpt
 from subscription import check_subscription_limits
 
@@ -21,7 +21,7 @@ async def gpt_chat_handler(message: types.Message):
         await message.answer(response)
 
         # Обновление лимитов
-        await increment_message_count(user['user_id'])
+        await increment_usage(user['user_id'])
     except Exception as e:
         await message.answer("❌ Произошла ошибка при обращении к GPT. Попробуйте позже.")
         print(f"GPT error: {e}")
