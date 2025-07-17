@@ -1,7 +1,7 @@
 from aiogram import Router, types
 from aiogram.filters import CommandStart, Command
 from user_manager import get_or_create_user
-from subscription import format_subscription_info
+from subscription import is_subscription_active, get_subscription_config
 
 router = Router()
 
