@@ -41,9 +41,9 @@ def get_subscription_config(user: User) -> dict:
 
 def increment_usage(user: User, message: bool = False, image: bool = False):
     if message:
-        user.used_messages_today += 1
-    if image:
-        user.used_images_today += 1
+        user.used_messages_today += 1
+    if image:
+        user.used_images_today += 1
     save_user(user)
 
 def can_use_feature(user: User, feature: str) -> bool:
