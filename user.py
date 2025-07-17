@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional, List
 from pydantic import BaseModel, Field
-from app.core.constants import SubscriptionType
+from constants import SubscriptionType
 
 class MemoryEntry(BaseModel):
     role: str  # "user" или "assistant"
