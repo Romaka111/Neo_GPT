@@ -25,3 +25,5 @@ async def gpt_chat_handler(message: types.Message):
     except Exception as e:
         await message.answer("❌ Произошла ошибка при обращении к GPT. Попробуйте позже.")
         print(f"GPT error: {e}")
+def register_message_handlers(dp):
+    dp.include_router(router)
