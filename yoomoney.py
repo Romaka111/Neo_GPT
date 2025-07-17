@@ -1,7 +1,7 @@
 # app/webhook/yoomoney.py
 
 from fastapi import APIRouter, Request, Response, status
-from app.core.payment import process_payment
+from payment import process_payment
 
 router = APIRouter()
 
