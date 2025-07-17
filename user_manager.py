@@ -10,7 +10,7 @@ client = MongoClient(MONGO_URL)
 db = client["neogpt"]
 users_collection = db["users"]
 
-def get_user(telegram_id: int) -> User:
+def get_or_create_user(telegram_id: int) -> User:
     data = users_collection.find_one({"telegram_id": telegram_id})
     if data:
         user = User(**data)
