@@ -27,7 +27,7 @@ async def on_startup():
 async def on_shutdown():
   await bot.session.close()
 
-@app.post("/webhook)
+@app.post("/webhook")
 async def telegram_webhook(request: Request):
   data = await request.json()
   update = Update.model_validate(data)
