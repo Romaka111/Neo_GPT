@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from bson import ObjectId
-from app.database.models.user import User, MemoryEntry
+from user import User, MemoryEntry
 from app.core.constants import SUBSCRIPTION_CONFIG, SubscriptionType
 import os
 
