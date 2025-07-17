@@ -6,7 +6,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 from commands import register_command_handlers
 from message import register_message_handlers
-from yoomoney import yoomoney
+import yoomoney
 from config import TELEGRAM_TOKEN, BASE_URL
 
 bot = Bot(token=TELEGRAM_TOKEN)
