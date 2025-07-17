@@ -1,5 +1,5 @@
 import openai
-from constants import OPENAI_API_KEY
+from constants import OPENAI_API_KEY, SUBSCRIPTION_DETAILS
 
 openai.api_key = OPENAI_API_KEY
 
@@ -24,3 +24,14 @@ async def openai_image(prompt: str) -> str:
         return response["data"][0]["url"]
     except Exception as e:
         raise RuntimeError(f"Ошибка при генерации изображения: {str(e)}")
+
+async def chat_with_gpt(user, message_text: str) -> str:
+    model = SUBSCRIPTION_DETAILS[user.subscription_type]["gpt_model"]
+
+    messages = [
+        {"role": "system", "content": "Ты умный и дружелюбный AI-помощник."},
+        {"role": "user", "content": message_text},
+    ]
+
+    return await openai_chat(messages, model=model)
+    
