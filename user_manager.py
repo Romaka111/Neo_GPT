@@ -40,7 +40,7 @@ def get_subscription_config(user: User) -> dict:
     return SUBSCRIPTION_CONFIG.get(user.subscription, SUBSCRIPTION_CONFIG[SubscriptionType.BASE])
 
 def increment_usage(user: User, message: bool = False, image: bool = False):
-    if message:
+    if message:
         user.used_messages_today += 1
     if image:
         user.used_images_today += 1
