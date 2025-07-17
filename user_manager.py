@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from pymongo import MongoClient
 from bson import ObjectId
 from user import User, MemoryEntry
-from constants import SUBSCRIPTION_CONFIG, SubscriptionType
+from constants import SUBSCRIPTION_DETAILS, SubscriptionType
 import os
 
 MONGO_URL = os.getenv("MONGO_URL")
