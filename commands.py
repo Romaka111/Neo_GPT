@@ -33,3 +33,6 @@ async def help_handler(message: types.Message):
     user = await get_or_create_user(message.from_user)
     text = format_subscription_info(user)
     await message.answer(text)
+
+def register_command_handlers(dispatcher):
+    dispatcher.include_router(router)
