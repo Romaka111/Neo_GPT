@@ -15,7 +15,7 @@ async def yoomoney_webhook(request: Request):
 
     try:
         await process_payment(data)
-        return Response(status_code=status.HTTP_200_OK)
+        return Response(status_code=status.HTTP_200_OK)
     except Exception as e:
         print(f"Ошибка при обработке платежа: {e}")
         return Response(status_code=status.HTTP_400_BAD_REQUEST)
