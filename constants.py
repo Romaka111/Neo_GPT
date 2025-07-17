@@ -2,7 +2,7 @@ import os
 from enum import Enum
 from datetime import timedelta
 
-OPEN_API_KEY = os.getnv("OPENAI_API_KEY")
+OPEN_API_KEY = os.getenv("OPENAI_API_KEY")
 
 class SubscriptionType(str, Enum):
     BASE = "base"
