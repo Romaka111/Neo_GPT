@@ -50,7 +50,7 @@ async def process_payment(data: dict):
            (name == "Smart+" and amount >= 149) or \
            (name == "Ultra" and amount >= 349):
            plan =  (days, level)
-            break
+           break
 
     if not plan:
         raise ValueError("Неизвестный тариф")
