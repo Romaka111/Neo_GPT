@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from bson import ObjectId
 from user import User, MemoryEntry
 from constants import SUBSCRIPTION_DETAILS, SubscriptionType
+from subscription import activate_subscription
 import os
 
 MONGO_URL = os.getenv("MONGO_URL")
@@ -63,3 +64,13 @@ def add_to_memory(user: User, role: str, content: str):
 def clear_memory(user: User):
     user.memory = []
     save_user(user)
+
+def set_subscription(user_id: int, subscription_type: SubscriptionType):
+    data = users_collection.find_one({"telegram_id": user_id})
+    if not data:
+        return False
+        
+    user = User(**data)
+    activate_subscription(user, subscription_type)
+    save_user(user)
+    return True
