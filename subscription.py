@@ -23,3 +23,11 @@ def expire_subscription(user: User):
     user.daily_message_limit = SUBSCRIPTION_DETAILS[SubscriptionType.BASE]["daily_limit"]
     user.images_left = 0
     user.updated_at = datetime.utcnow()
+    
+def check_subscription_limits(user: User):
+    """Проверка лимита сообщений"""
+    subscription = SUBSCRIPTION_DETAILS[user.subscription_type]
+    if subscription["daily_message_limit"] is not None:
+        if user.daily_message_count >= subscription["daily_message_limit"]:
+            return False, "🔒 Лимит сообщений на сегодня исчерпан. Приобретите подписку, чтобы продолжить."
+    return True, None
