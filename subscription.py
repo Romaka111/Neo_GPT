@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-from app.database.models.user import User
-from app.core.constants import SubscriptionType, SUBSCRIPTION_CONFIG
+from user import User
+from constants import SubscriptionType, SUBSCRIPTION_CONFIG
 
 def is_subscription_active(user: User) -> bool:
     return user.subscription_type != SubscriptionType.BASE and user.subscription_expires_at and user.subscription_expires_at > datetime.utcnow()
