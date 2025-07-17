@@ -30,7 +30,7 @@ def verify_signature(data: dict) -> bool:
         YOOMONEY_SECRET,
         data.get("label", "")
     ])
-    sha1 = hashlib.sha1(string.encode("utf-8")).hexdigest()
+    sha1 = hashlib.sha1(string.encode("utf-8")).hexdigest()
     return sha1 == data.get("sha1_hash", "")
 
 async def process_payment(data: dict):
