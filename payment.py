@@ -49,7 +49,7 @@ async def process_payment(data: dict):
         if (name == "Student Pro" and amount >= 49) or \
            (name == "Smart+" and amount >= 149) or \
            (name == "Ultra" and amount >= 349):
-           plan =  days, level)
+           plan =  (days, level)
             break
 
     if not plan:
