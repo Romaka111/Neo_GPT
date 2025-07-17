@@ -2,7 +2,7 @@
 
 import hashlib
 from datetime import datetime, timedelta
-from app.utils.user_manager import set_subscription
+from user_manager import set_subscription
 
 # Токен ЮMoney (из переменной окружения)
 import os
