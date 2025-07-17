@@ -37,7 +37,7 @@ def is_subscription_active(user: User) -> bool:
     return datetime.utcnow() < user.subscription_end
 
 def get_subscription_config(user: User) -> dict:
-    return SUBSCRIPTION_CONFIG.get(user.subscription, SUBSCRIPTION_CONFIG[SubscriptionType.BASE])
+    return SUBSCRIPTION_DETAILS.get(user.subscription, SUBSCRIPTION_DETAILS[SubscriptionType.BASE])
 
 def increment_usage(user: User, message: bool = False, image: bool = False):
     if message:
