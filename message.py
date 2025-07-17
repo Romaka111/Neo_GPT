@@ -1,7 +1,7 @@
 from aiogram import Router, types, F
-from app.services.user_manager import get_or_create_user, increment_message_count
-from app.services.openai_client import chat_with_gpt
-from app.utils.subscriptions import check_subscription_limits
+from user_manager import get_or_create_user, increment_message_count
+from openai_client import chat_with_gpt
+from subscription import check_subscription_limits
 
 router = Router()
 
